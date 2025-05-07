@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Crumbs Bakery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+
+        #logo {
+            font-family: 'Pacifico', cursive;
+            font-size: larger;
+            display: flex;
+        }
+
+        #navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #FFF5E1;
+            color: #5C4033;
+        }
+
+        #navlinks a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        #order {
+            padding: 6px 12px;
+            border: 2px solid rgb(138, 84, 40);
+            border-radius: 12px;
+            color: rgb(138, 84, 40);
+            transition: 0.3s ease;
+        }
+
+        #order:hover {
+            background-color: rgb(138, 84, 40);
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Hero Split Layout */
+        .hero {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            flex: 1;
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            /*clip-path: ellipse(80% 100% at 0% 50%);*/
+        }
+
+        .hero-content {
+            flex: 1;
+            background-color: #FFF5E1;
+            color: #5C4033;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .hero-content h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #5C4033;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            width: fit-content;
+        }
+
+        .cta-button:hover {
+            background-color: #a67c52;
+            color: white;
+        }
+
+        /* Menu Section Styles */
+        #menu-section {
+            padding: 60px 20px;
+            background-color: #FFF9EC;
+            text-align: center;
+        }
+
+        #menu-section h1 {
+            margin-bottom: 40px;
+            color: #5C4033;
+            font-size: 2.5rem;
+        }
+
+        .menu-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            top: 0;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            color: #5C4033;
+            margin-bottom: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+        }
+
+        .card-content p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card-price {
+            font-weight: bold;
+            color: #5C4033;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .card-button {
+            background-color: #5C4033;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card-button:hover {
+            background-color: #a67c52;
+        }
+
+        .aboutus-content {
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: FFF9EC;
+        }
+
+        .aboutus-content img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        #aboutus h1 {
+            margin-bottom: 40px;
+            color: #5C4033;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .aboutus-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        #aboutus {
+            background-color: #FFF5E1;
+        }
+
+        #faq {
+            background-color: #FFF5E1;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #faq h1 {
+            font-family: 'Pacifico', cursive;
+            color: #5C4033;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            background-color: white;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #5C4033;
+            background-color: #FFF9EC;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: #f0e1c1;
+        }
+
+        .faq-answer {
+            padding: 16px;
+            display: none;
+            color: #555;
+            background-color: white;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        #map {
+            padding: 60px 20px;
+            background-color: #FFF5E1;
+            text-align: center;
+        }
+
+        #map h2 {
+            font-family: 'Pacifico', cursive;
+            color: #5C4033;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+
+        .map-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .contactus p {
+            text-align: center;
+
+        }
+
+        #order-form {
+            padding: 60px 20px;
+            background-color: #FFF9EC;
+            text-align: center;
+        }
+
+        #order-form h1 {
+            color: #5C4033;
+            font-family: 'Pacifico', cursive;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            background-color: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #5C4033;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #a67c52;
+            outline: none;
+            box-shadow: 0 0 5px rgba(166, 124, 82, 0.4);
+        }
+
+        .order-form .cta-button {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+
+
+
+        /* Optional: Responsive stacking on mobile */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .hero-image {
+                clip-path: none;
+                height: 300px;
+                width: 100%;
+            }
+
+            .hero-content {
+                padding: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .menu-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-card {
+                margin-bottom: 20px;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">Sweet Crumbs Bakery</div>
+        <div id="navlinks">
+            <a href="#menu-section">Menu</a>
+            <a href="#faq">FAQ</a>
+            <a href="#aboutus">About us</a>
+            <a href="#map">Contact</a>
+            <a href="#" id="order">Order Now</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <div class="hero-image"></div>
+            <div class="hero-content">
+                <h1>Welcome to Sweet Crumbs Bakery</h1>
+                <p>Freshly Baked Happiness, Every Day!</p>
+                <a href="#" class="cta-button">Order Now</a>
+            </div>
+        </div>
+    </main>
+
+    <section id="menu-section">
+        <h1>Our Menu</h1>
+        <div class="menu-cards">
+            <!-- Card 1 -->
+            <div class="menu-card">
+                <div class="card-image" style="background-image: url('/api/placeholder/400/320');"></div>
+                <div class="card-content">
+                    <h2>Classic Croissant</h2>
+                    <p>Buttery, flaky layers baked to golden perfection. Our signature pastry.</p>
+                    <div class="card-price">$4.50</div>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="menu-card">
+                <div class="card-image" style="background-image: url('/api/placeholder/400/320');"></div>
+                <div class="card-content">
+                    <h2>Chocolate Cake</h2>
+                    <p>Rich, moist chocolate cake with velvety ganache frosting. Pure decadence.</p>
+                    <div class="card-price">$6.75</div>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="menu-card">
+                <div class="card-image" style="background-image: url('/api/placeholder/400/320');"></div>
+                <div class="card-content">
+                    <h2>Sourdough Bread</h2>
+                    <p>Artisanal sourdough with a crispy crust and soft, tangy interior.</p>
+                    <div class="card-price">$5.25</div>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="aboutus">
+        <h1>About Us</h1>
+        <div class="aboutus-content">
+            <img src="Leonardo_Phoenix_10_Create_an_image_of_a_diverse_group_of_five_2.jpg" alt="team" width="500"
+                height="300">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur a earum dolor, sapiente quisquam animi
+                repellendus ipsum. Adipisci praesentium recusandae facere perspiciatis blanditiis impedit obcaecati
+                repellat
+                iste! Eaque, quos impedit?</p>
+        </div>>
+
+
+    </section>
+    <section id="faq">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">What are your opening hours?</button>
+                <div class="faq-answer">We’re open from 8 AM to 8 PM, Monday to Saturday. Closed on Sundays.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Do you offer gluten-free options?</button>
+                <div class="faq-answer">Yes! We offer gluten-free cakes, cookies, and muffins made fresh daily.</div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">How can I place an order?</button>
+                <div class="faq-answer">You can place an order through our website, phone, or visit our store directly.
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="map">
+        <h2>Find Us Here</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!2m12...etc..." width="100%" height="400"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe><br>
+        </div>
+        <div class="contactus">
+            <p>Email: sarah@sweetcrumbs.com <br>
+                Phone: (555) 123-4567</p>
+        </div>
+    </section>
+    <section id="order-form">
+        <h1>Place Your Order</h1>
+        <form action="#" method="POST" class="order-form">
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="product">Select Product *</label>
+                <select id="product" name="product" required>
+                    <option value="">-- Choose an item --</option>
+                    <option value="croissant">Classic Croissant</option>
+                    <option value="chocolate-cake">Chocolate Cake</option>
+                    <option value="sourdough">Sourdough Bread</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity *</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Special Requests</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">Submit Order</button>
+        </form>
+    </section>
+
+
+    <script>
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+
+</html>
